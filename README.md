@@ -1,1 +1,1 @@
-# job-template
+# service-template
