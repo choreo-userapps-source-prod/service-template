@@ -1,9 +1,11 @@
-FROM ballerina/ballerina:1.0.5
+FROM choreoipaas/ballerina:observability-improvements AS builder 
 
 WORKDIR /tmp/
-COPY *.bal /tmp/
-RUN ballerina build *.bal
+COPY ./pService/ /tmp/
+RUN ballerina build -a
 
-FROM openjdk:8-jre-alpine
-COPY --from=0 /tmp/*.jar .
+
+FROM openjdk:8-jre
+COPY --from=builder /tmp/target/bin/*.jar .
+COPY ballerina.conf .
 CMD java -jar *.jar
