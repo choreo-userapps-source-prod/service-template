@@ -8,9 +8,3 @@ version= "0.1.0"
 [platform]
 target = "java8"
 
-	[[platform.libraries]]
-	artifactId = "ballerina-choreo-tracing-extension"
-	version = "0.0.1-SNAPSHOT"
-	path = "/ballerina/runtime/distributions/jballerina-1.2.0-SNAPSHOT/lib/tools/choreo/lib/ballerina-choreo-tracing-extension-0.0.1-SNAPSHOT-all.jar"
-	groupId = "com.wso2.choreo"
-	modules = ["mService"]
