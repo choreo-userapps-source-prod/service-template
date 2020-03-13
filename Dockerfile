@@ -3,7 +3,7 @@ FROM choreoipaas/choreo-ballerina:observability-improvements AS builder
 
 WORKDIR /tmp/
 COPY ./pService/ /tmp/
-RUN ballerina build -a
+RUN ballerina build -a || test $(find /tmp/target/bin/ -name *.jar)
 
 
 FROM openjdk:8-jre
