@@ -1,0 +1,7 @@
+# Jar files
+*.jar
+
+# Log files
+*.log
+
+*/target/**
